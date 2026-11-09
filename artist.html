@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#161922">
+<title>Художнику — Stack Attack</title>
+<link rel="stylesheet" href="artist.css">
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <a href="index.html" class="back-link">← На главную</a>
+    <h1>Техзадание для художника</h1>
+  </header>
+
+  <section class="intro">
+    <p>Здесь собраны все спрайты игры. Оригинальная пиксельная графика — для понимания исходника. Современная перерисовка — то, что уже готово. Группы грузчиков требуют новой прорисовки, поэтому они показаны на шахматном фоне с референсами желаемого стиля.</p>
+  </section>
+
+  
+  <section class="downloads">
+    <h2>Скачать архивы</h2>
+    <div class="btn-group">
+      <button id="dl-old">Все старые спрайты</button>
+      <button id="dl-new">Новые спрайты (без грузчиков)</button>
+      <button id="dl-ref">Все референсы</button>
+    </div>
+    <p class="hint">Архивы формируются в браузере. Может занять несколько секунд.</p>
+  </section>
+
+  
+  <section>
+    <h2>Оригинальные спрайты (pixel)</h2>
+    <div class="grid" id="grid-old"></div>
+  </section>
+
+  
+  <section>
+    <h2>Новые спрайты (оставляем)</h2>
+    <div class="grid" id="grid-new"></div>
+  </section>
+
+  
+  <section>
+    <h2>Грузчики — требуется перерисовка (необходимый размер: 80x160)</h2>
+    <p>Ниже показаны три группы кадров: оригинал, текущая перерисовка и желаемый стиль. Фон — шахматная доска для контроля прозрачности.</p>
+    <p><br></p>
+    <p>Проблемы текущей перерисовки: не подходит по стилю, ИИ не угадал с позами, со всех сторон свободные края при формальном соблюдении размера.</p>
+    <p><br></p>
+    <p>Например, если в оригинале у спрайта в позе "толкаю блок" руки прислонены к краю изображения, то и у перерисовки в позе "толкаю блок" руки должны прилегать к краю изображения. Перерисовка в колонке "Текущий новый" не смогла ни то, ни другое.</p>
+    <p><br></p>
+    <p>В колонке "Референс" приведены примеры, в которых стиль плюс-минус нормальный, но под размеры 80x160 они толком не рассчитаны.</p>
+    <p><br></p>
+
+    <div class="worker-block" id="worker-red">
+      <h3>Красный грузчик</h3>
+      <div class="worker-columns">
+        <div class="worker-col">
+          <h4>Оригинал</h4>
+          <div class="worker-frames" data-type="old" data-color="red"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Текущий новый (не нравится)</h4>
+          <div class="worker-frames" data-type="new" data-color="red"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Референс</h4>
+          <img src="assets/references/worker-red.png" alt="Референс красного" class="ref-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="worker-block" id="worker-blue">
+      <h3>Синий грузчик</h3>
+      <div class="worker-columns">
+        <div class="worker-col">
+          <h4>Оригинал</h4>
+          <div class="worker-frames" data-type="old" data-color="blue"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Текущий новый (не нравится)</h4>
+          <div class="worker-frames" data-type="new" data-color="blue"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Референс</h4>
+          <img src="assets/references/worker-blue.png" alt="Референс синего" class="ref-img">
+        </div>
+      </div>
+    </div>
+
+    <div class="worker-block" id="worker-green">
+      <h3>Зелёный грузчик</h3>
+      <div class="worker-columns">
+        <div class="worker-col">
+          <h4>Оригинал</h4>
+          <div class="worker-frames" data-type="old" data-color="green"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Текущий новый (не нравится)</h4>
+          <div class="worker-frames" data-type="new" data-color="green"></div>
+        </div>
+        <div class="worker-col">
+          <h4>Референс</h4>
+          <img src="assets/references/worker-green.png" alt="Референс зелёного" class="ref-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="index.html">← Вернуться в игру</a>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="artist.js"></script>
+</body>
+</html>

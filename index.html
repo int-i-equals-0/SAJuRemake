@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#161922">
+<title>Stack Attack — веб-ремейк</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="artist.html" id="artist-link" title="Техзадание для художника">🎨 Художнику</a>
+<div id="stage">
+  
+  <div class="pad pad-left">
+    <button data-act="left"  aria-label="шаг влево">◀</button>
+    <button data-act="right" aria-label="шаг вправо">▶</button>
+    <button data-act="use" class="wide" aria-label="применить бонус">★</button>
+  </div>
+
+  <div id="viewport">
+    <canvas id="game"></canvas>
+    <button id="pause" data-act="pause" aria-label="пауза">II</button>
+  </div>
+
+  
+  <div class="pad pad-right">
+    <button data-act="jumpL" aria-label="прыжок влево">◤</button>
+    <button data-act="jump"  aria-label="прыжок">▲</button>
+    <button data-act="jumpR" aria-label="прыжок вправо">◥</button>
+  </div>
+</div>
+
+<p class="controls">
+  QWE — прыжки (влево / вверх / вправо)&nbsp;&nbsp;·&nbsp;&nbsp;
+  ASD — шаг влево / бонус / шаг вправо&nbsp;&nbsp;·&nbsp;&nbsp;
+  P или Esc — пауза&nbsp;&nbsp;·&nbsp;&nbsp;
+  Enter — подтвердить
+</p>
+
+<script src="js/game.js"></script>
+</body>
+</html>
